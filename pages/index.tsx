@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import { Header, Banner, Posts } from '/components';
-import { sanityClient, urlFor } from '../sanity';
+import { Header, Banner, Posts } from '../components';
+import { client } from '../sanity';
 import { PostsData } from '../typings';
 
 interface Props {
@@ -19,7 +18,7 @@ const Home: NextPage<Props> = ({ posts }) => {
       </Head>
       <Header /> 
       <Banner />
-      <Posts />
+      <Posts posts={posts} />
     </div>
   );
 };
@@ -41,7 +40,7 @@ slug
 }
 `;
 
-  const posts = await sanityClient.fetch(query);
+  const posts = await client.fetch(query);
   return {
     props: {
       posts,
