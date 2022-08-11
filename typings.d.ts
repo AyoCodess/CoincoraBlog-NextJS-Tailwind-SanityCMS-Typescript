@@ -5,8 +5,8 @@ export interface PostsData {
   _type: string;
   _updatedAt: string;
   author: {
-    _ref: string;
-    _type: string;
+    name: string;
+    image: any;
   };
   body: [
     {
