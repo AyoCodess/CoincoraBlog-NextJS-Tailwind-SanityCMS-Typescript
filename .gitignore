@@ -5,6 +5,13 @@
 /.pnp
 .pnp.js
 
+#sanity
+/medium-app-sanity/sanity.json
+/medium-app-sanity/dist
+/medium-app-sanity/config
+/medium-app-sanity/plugins
+/medium-app-sanity/static
+
 # testing
 /coverage
 
