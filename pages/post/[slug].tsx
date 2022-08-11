@@ -64,7 +64,7 @@ const Post = ({ post }: Props) => {
         </div>
       </article>
       <hr className='max-w-lg my-5 mx-auto border border-yellow-500' />
-      <Form />
+      <Form post={post} />
     </main>
   );
 };
