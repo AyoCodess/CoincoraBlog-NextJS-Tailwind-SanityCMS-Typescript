@@ -4,7 +4,7 @@ import { client } from '../../sanity';
 import { PostsData } from '../../typings';
 import imageUrlBuilder from '@sanity/image-url';
 import PortableText from 'react-portable-text';
-import { Form, Header } from '../../components';
+import { Form, FormCommentBox, Header } from '../../components';
 
 // builds image URL from an image object
 const builder = imageUrlBuilder(client);
@@ -65,6 +65,7 @@ const Post = ({ post }: Props) => {
       </article>
       <hr className='max-w-lg my-5 mx-auto border border-yellow-500' />
       <Form post={post} />
+      <FormCommentBox post={post} />
     </main>
   );
 };
@@ -115,6 +116,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }`;
 
   const post = await client.fetch(query, { slug: params?.slug });
+
+  console.log('post', post);
 
   if (!post) {
     return {
