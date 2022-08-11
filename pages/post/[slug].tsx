@@ -14,7 +14,7 @@ interface Props {
 }
 
 const Post = ({ post }: Props) => {
-  console.log(post);
+  //   console.log(post);
   return (
     <main>
       <Header />
@@ -116,8 +116,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }`;
 
   const post = await client.fetch(query, { slug: params?.slug });
-
-  console.log('post', post);
 
   if (!post) {
     return {

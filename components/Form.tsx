@@ -27,8 +27,6 @@ export const Form = ({ post }: Props) => {
         method: 'POST',
         body: JSON.stringify(data),
       });
-
-      console.log(response);
     } catch (error) {
       console.error(error);
       setSubmitted(false);
