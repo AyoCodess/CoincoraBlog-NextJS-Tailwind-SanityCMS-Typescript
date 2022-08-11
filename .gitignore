@@ -11,6 +11,7 @@
 /medium-app-sanity/config
 /medium-app-sanity/plugins
 /medium-app-sanity/static
+/medium-app-sanity/node_modules
 
 # testing
 /coverage
