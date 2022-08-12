@@ -6,12 +6,12 @@
 .pnp.js
 
 #sanity
-/medium-app-sanity/sanity.json
-/medium-app-sanity/dist
-/medium-app-sanity/config
-/medium-app-sanity/plugins
-/medium-app-sanity/static
-/medium-app-sanity/node_modules
+/studio/sanity.json
+/studio/dist
+/studio/config
+/studio/plugins
+/studio/static
+/studio/node_modules
 
 # testing
 /coverage
