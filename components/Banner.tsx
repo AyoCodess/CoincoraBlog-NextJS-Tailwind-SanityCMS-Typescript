@@ -2,22 +2,19 @@ import React from 'react';
 
 export const Banner = () => {
   return (
-    <div className='flex justify-between items-center bg-yellow-400 border-y border-black py-10 lg:py-0'>
+    <div className='flex justify-between items-center bg-white border-y border-slate-400 py-10'>
       <div className='px-10 space-y-5'>
-        <h1 className='text-6xl max-w-xl font-serif'>
+        <h1 className='text-6xl max-w-xl '>
           <span className='underline decoration-black decoration-4'>
-            Grime Medium
+            Coincora
           </span>{' '}
-          is a place to write read and connect
+          The Crypto Knowledge Base
         </h1>{' '}
-        <h2>
-          I'ts easy and free to post your thinking on any grime sub-topic and
-          connect with millions of readers
-        </h2>
+        <h2>Lowering risk and ambiguity in crypto-investing</h2>
       </div>
       <img
-        className='hidden md:inline-flex h-32 lg:h-full'
-        src='https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png'
+        className='hidden md:inline-flex h-44 lg:h-50'
+        src='/btc-favicon8.png'
         alt='logo'
       />
       <div></div>

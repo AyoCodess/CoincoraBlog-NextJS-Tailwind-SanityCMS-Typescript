@@ -38,7 +38,7 @@ export const Form = ({ post }: Props) => {
   return (
     <>
       {submitted && (
-        <div className='flex flex-col p-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto'>
+        <div className='flex flex-col p-10 my-10 bg-blue-500 text-white max-w-2xl mx-auto'>
           <h3 className='text-3xl font-bold'>Thank you for your comment</h3>
           <p>Once it has been approved it will appear below</p>
         </div>
@@ -47,7 +47,7 @@ export const Form = ({ post }: Props) => {
         <form
           className='flex flex-col p-5 my-10 max-w-2xl mx-auto mb-10'
           onSubmit={handleSubmit(onSubmit)}>
-          <h3 className=' text-sm text-yellow-500'>Enjoy this article</h3>
+          <h3 className=' text-sm text-blue-500'>Enjoy this article</h3>
           <h4 className='text-3xl font-bold'>Leave a comment below</h4>
           <hr className='oy-3 mt-2' />
 
@@ -62,7 +62,7 @@ export const Form = ({ post }: Props) => {
             <span className='text-gray-700'>Name</span>
             <input
               {...register('name', { required: true })}
-              className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring  '
+              className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500 outline-none focus:ring  '
               type='text'
               placeholder='Your Name'
             />
@@ -71,7 +71,7 @@ export const Form = ({ post }: Props) => {
             <span className='text-gray-700'>Email</span>
             <input
               {...register('email', { required: true })}
-              className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring  '
+              className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500 outline-none focus:ring  '
               type='text'
               placeholder='Your Name'
             />
@@ -80,7 +80,7 @@ export const Form = ({ post }: Props) => {
             <span className='text-gray-700'>Comment</span>
             <textarea
               {...register('comment', { required: true })}
-              className='shadow border rounded py-2 px-3 form-textarea mt-2 block w-full ring-yellow-500 outline-none focus:ring'
+              className='shadow border rounded py-2 px-3 form-textarea mt-2 block w-full ring-blue-500 outline-none focus:ring'
               rows={8}
               placeholder='Your Name'
             />
@@ -100,7 +100,7 @@ export const Form = ({ post }: Props) => {
 
           <input
             type='Submit'
-            className='shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer'
+            className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer'
           />
         </form>
       )}

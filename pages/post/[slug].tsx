@@ -3,7 +3,7 @@ import React, { Children } from 'react';
 import { client } from '../../sanity';
 import { PostsData } from '../../typings';
 import imageUrlBuilder from '@sanity/image-url';
-import PortableText from 'react-portable-text';
+import { PortableText } from '@portabletext/react';
 import { Form, FormCommentBox, Header } from '../../components';
 
 // builds image URL from an image object
@@ -14,7 +14,46 @@ interface Props {
 }
 
 const Post = ({ post }: Props) => {
-  //   console.log(post);
+  console.log(post);
+
+  const components = {
+    block: {
+      h1: ({ children }: any) => (
+        <h1 className='text-4xl font-bold my-5'>{children}</h1>
+      ),
+      h2: ({ children }: any) => (
+        <h2 className='text-3xl font-bold my-5'>{children}</h2>
+      ),
+      h3: ({ children }: any) => (
+        <h3 className='text-2xl font-bold my-5'>{children}</h3>
+      ),
+      h4: ({ children }: any) => (
+        <h4 className='text-xl font-bold my-5'>{children}</h4>
+      ),
+      normal: ({ children }: any) => <p className=' my-2'>{children}</p>,
+    },
+
+    marks: {
+      link: ({ value, children }: any) => (
+        <a
+          target='_blank'
+          rel='noopener'
+          className='text-blue-500 hover:underline cursor-pointer'
+          href={value.href}>
+          {children}
+        </a>
+      ),
+      br: () => <br className='my-2' />,
+    },
+
+    list: {
+      bullet: ({ children }: any) => (
+        <ul className='ml-4 list-none my-4'>{children}</ul>
+      ),
+      number: ({ children }: any) => <ol className='my-4 '>{children}</ol>,
+    },
+  };
+
   return (
     <main>
       <Header />
@@ -40,30 +79,11 @@ const Post = ({ post }: Props) => {
             Published at {new Date(post._createdAt).toLocaleDateString()}
           </p>
         </div>
-        <div>
-          <PortableText
-            className='mt-10'
-            content={post.body}
-            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-            serializers={{
-              h1: (props: any) => (
-                <h1 className='text-2xl font-bold my-5'>{props}</h1>
-              ),
-              h2: (props: any) => (
-                <h2 className='text-xl font-bold my-5'>{props}</h2>
-              ),
-              li: (props: any) => <li className='ml-4 list-disc'>{props}</li>,
-              link: ({ href, children }: any) => (
-                <a className='text-blue-500 hover:underline' href={href}>
-                  {children}
-                </a>
-              ),
-            }}
-          />
+        <div className='mt-10'>
+          <PortableText value={post.body} components={components} />
         </div>
       </article>
-      <hr className='max-w-lg my-5 mx-auto border border-yellow-500' />
+      <hr className='max-w-lg my-5 mx-auto border border-blue-500' />
       <Form post={post} />
       <FormCommentBox post={post} />
     </main>
@@ -127,6 +147,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
     },
-    revalidate: 60 * 60 * 24, // after 1day it will update the old cache
+    revalidate: 60 * 60, // after 1 hour it will update the old cache
   };
 };

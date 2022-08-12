@@ -12,8 +12,8 @@ const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div className='max-w-7xl mx-auto'>
       <Head>
-        <title>Medium Blog</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Coincora Blog</title>
+        <link rel='icon' href='/btc-favicon8.png' />
       </Head>
       <Header /> 
       <Banner />
