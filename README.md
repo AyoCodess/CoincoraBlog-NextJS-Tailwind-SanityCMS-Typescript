@@ -23,4 +23,4 @@ React, Next.js, Sanity CMS, React Hook forms & Typescript.
 
 ### Live link
 
-https://medium-app-ayocodes.vercel.app/
+https://coincora-blog.vercel.app/
