@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Header, Banner, Posts } from '../components';
+import { Headers, Banner, Posts } from '../components';
 import { client } from '../sanity';
 import { PostsData } from '../typings';
 
@@ -15,7 +15,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         <title>Coincora Blog</title>
         <link rel='icon' href='/btc-favicon8.png' />
       </Head>
-      <Header /> 
+      <Headers />
       <Banner />
       <Posts posts={posts} />
     </div>

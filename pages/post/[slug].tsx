@@ -4,7 +4,7 @@ import { client } from '../../sanity';
 import { PostsData } from '../../typings';
 import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '@portabletext/react';
-import { Form, FormCommentBox, Header } from '../../components';
+import { Form, FormCommentBox, Headers } from '../../components';
 
 // builds image URL from an image object
 const builder = imageUrlBuilder(client);
@@ -56,18 +56,18 @@ const Post = ({ post }: Props) => {
 
   return (
     <main>
-      <Header />
+      <Headers />
       <img
         className='w-full h-40 object-cover'
         src={urlFor(post.mainImage).url()!}
       />
       <article className='max-w-3xl mx-auto p-5'>
-        <h1 className='text-3xl mt-10 mb-3'>{post.title}</h1>
+        <h1 className='text-3xl mt-5 mb-3'>{post.title}</h1>
         <h2 className='text-xl font-light text-gray-500 mb-2'>
           {post.description}
         </h2>
 
-        <div className='flex items-center space-x-2'>
+        <div className='flex items-center space-x-2 mt-4'>
           <img
             className='h-10 w-10 rounded-full'
             src={urlFor(post.author.image).url()!}

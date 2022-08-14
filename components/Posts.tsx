@@ -14,10 +14,10 @@ interface Props {
 export const Posts = ({ posts }: Props) => {
   //   console.log(posts);
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6 md:p-6 '>
       {posts.map((post) => (
         <Link key={post._id} href={`/post/${post.slug.current}`}>
-          <div className=' border rounded-lg group cursor-pointer overflow-hidden'>
+          <div className=' border-2 shadow-lg rounded-lg group cursor-pointer overflow-hidden'>
             <img
               className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out'
               src={urlFor(post.mainImage).url()!}
