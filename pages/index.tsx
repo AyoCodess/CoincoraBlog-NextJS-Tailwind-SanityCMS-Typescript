@@ -14,6 +14,22 @@ const Home: NextPage<Props> = ({ posts }) => {
       <Head>
         <title>Coincora Blog</title>
         <link rel='icon' href='/btc-favicon8.png' />
+        {/* <!-- * META TAGS FOR SOCIAL MEDIA * --> */}
+        <meta property='og:title' content='Coincora Blog' />
+        <meta property='og:description' content='The Crypto Knowledge Base' />
+        <meta name='description' content='The Crypto Knowledge Base' />
+        <meta property='og:image' content='https://i.imgur.com/7iee3YZ.png' />
+        <meta property='og:url' content='https://coincora-blog.vercel.app/' />
+        <meta property='og:site_name' content='Ayo Codes - Portfolio Website' />
+        <meta property='og:locale' content='en_GB' />
+        <meta property='og:type' content='website' />
+        <meta name='twitter:image' content='https://i.imgur.com/7iee3YZ.png' />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content='Coincora Blog' />
+        <meta name='twitter:description' content='The Crypto Knowledge Base' />
+        <meta name='twitter:site' content='@ayo__codes' />
+        <meta name='twitter:creator' content='@ayo__codes' />
+        {/* <!-- * META TAGS FOR SOCIAL MEDIA ENDS * -->*/}
       </Head>
       <Headers />
       <Banner />
