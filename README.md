@@ -12,7 +12,8 @@ React, Next.js, Sanity CMS, React Hook forms & Typescript.
 
 1. Comment feature (only approved comments will be displayed)
 2. Form validation
-3. Mobile first approach
+3. Incremental Static generation of blog post pages. Single page posts are re-evaluated every hour.
+4. Mobile first approach
 
 ## Todo list
 
